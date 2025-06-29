@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Categories, meals, menuDetails } from "../assets/assets";
+import MenuDetailModal from "./MenuDetailModal";
 
 const Menu = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -10,50 +11,11 @@ const Menu = () => {
   return (
     <>
       {modalOpen && selectedDetail && (
-        <div
-          className="fixed inset-0 bg-modal bg-opacity-50 flex items-center justify-center z-50"
-          onClick={() => setModalOpen(false)}
-        >
-          <div
-            className="bg-white rounded-lg p-8 w-11/12 mx-auto md:w-full max-w-sm relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-2 right-2 text-gray-500 text-2xl"
-              onClick={() => setModalOpen(false)}
-            >
-              &times;
-            </button>
-            <img
-              src={selectedDetail.image}
-              alt={selectedDetail.title}
-              className="w-full h-64 object-cover rounded mb-4"
-            />
-            <h2 className="text-2xl font-medium mb-2">
-              {selectedDetail.title}
-            </h2>
-            <p className="mb-4 text-sm">{selectedDetail.description}</p>
-            <div className="flex justify-between mb-4">
-              <div>
-                <p className="text-sub font-semibold">Fat</p>
-                <p className="text-primary font-bold">{selectedDetail.fat}</p>
-              </div>
-              <div>
-                <p className="text-sub font-semibold">Carbs</p>
-                <p className="text-primary font-bold">{selectedDetail.carb}</p>
-              </div>
-              <div>
-                <p className="text-sub font-semibold">Protein</p>
-                <p className="text-primary font-bold">
-                  {selectedDetail.protein}
-                </p>
-              </div>
-            </div>
-            <p className="text-sm  font-semibold text-red-400">
-              {selectedDetail.warning}
-            </p>
-          </div>
-        </div>
+        <MenuDetailModal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          detail={selectedDetail}
+        />
       )}
       <section className="flex flex-col md:flex-row w-11/12 mx-auto justify-between py-12">
         <div className="hidden md:block w-1/5">
@@ -75,7 +37,7 @@ const Menu = () => {
               className=" w-full md:w-[45%] p-4 rounded-lg shadow-sm"
               onClick={() => {
                 // For demo, use index+1 as id; in real use, match with your menuDetails id
-                setSelectedId(index + 1);
+                setSelectedId(menuDetails[index]?.id || index + 1);
                 setModalOpen(true);
               }}
             >
