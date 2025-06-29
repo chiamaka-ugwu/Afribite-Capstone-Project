@@ -5,11 +5,11 @@ import LoginForm from "../components/LoginForm";
 const Login = () => {
   return (
     <>
-      <section className="flex w-full relative">
-        <div className="h-screen fixed ">
+      <section className="flex flex-col md:flex-row w-full relative">
+        <div className="hidden md:block md:h-screen md:fixed">
           <img
             src={assets.deliciousMeal2}
-            className="h-screen w-full rounded-br-2xl rounded-tr-2xl object-cover"
+            className="h-auto md:h-screen w-full md:rounded-br-2xl md:rounded-tr-2xl object-cover"
             alt="delicious meal"
           />
           <div className="absolute bottom-4 left-4">
@@ -22,7 +22,7 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-center w-2/3 absolute left-1/4">
+        <div className="flex justify-center w-full md:w-2/3 md:absolute md:top-8 md:left-1/4 ">
           <LoginForm />
         </div>
       </section>

@@ -53,7 +53,7 @@ const LoginForm = () => {
   };
 
   return (
-    <section className="w-1/2 my-12">
+    <section className="w-4/5 md:w-1/2 my-12">
       <div className="mb-4">
         <img src={assets.logo} alt="logo" />
       </div>

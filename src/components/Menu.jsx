@@ -15,7 +15,7 @@ const Menu = () => {
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="bg-white rounded-lg p-8 w-full max-w-sm relative"
+            className="bg-white rounded-lg p-8 w-11/12 mx-auto md:w-full max-w-sm relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -55,8 +55,8 @@ const Menu = () => {
           </div>
         </div>
       )}
-      <section className="flex w-11/12 mx-auto justify-between py-12">
-        <div className=" w-1/5">
+      <section className="flex flex-col md:flex-row w-11/12 mx-auto justify-between py-12">
+        <div className="hidden md:block w-1/5">
           <h1 className="text-3xl mb-4">Filters</h1>
           <h2 className="text-2xl mb-4">Categories</h2>
           <ul className="space-y-4">
@@ -68,11 +68,11 @@ const Menu = () => {
             ))}
           </ul>
         </div>
-        <div className="w-3/4 flex flex-wrap gap-16">
+        <div className="md:w-3/4 flex flex-col md:flex-row md:flex-wrap gap-16">
           {meals.map(({ mealImage, title, description, price }, index) => (
             <div
               key={index}
-              className="w-[45%] p-4 rounded-lg shadow-sm"
+              className=" w-full md:w-[45%] p-4 rounded-lg shadow-sm"
               onClick={() => {
                 // For demo, use index+1 as id; in real use, match with your menuDetails id
                 setSelectedId(index + 1);

@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      {/* <nav className="flex justify-between items-center h-20 w-11/12 mx-auto">
+      {/* Desktop */}
+      <nav className="hidden md:flex justify-between items-center h-20 w-11/12 mx-auto">
         <div className="">
           <img src={assets.logo} className="h-9" alt="logo" />
         </div>
@@ -23,10 +24,7 @@ const Navbar = () => {
           </li>{" "}
           <li className="cursor-pointer text-sm">Locations</li>
           <li className="cursor-pointer text-sm">About Us</li>
-          <NavLink
-            to="/login"
-            // className={({ isActive }) => (isActive ? "active" : "")}
-          >
+          <NavLink to="/login">
             <button className="bg-primary p-2 rounded-lg text-white text-sm">
               Login/Sign Up
             </button>
@@ -53,7 +51,23 @@ const Navbar = () => {
             />
           </div>
         </ul>
-      </nav> */}
+      </nav>
+
+      {/* Mobile */}
+      <nav className="flex md:hidden justify-between items-center w-full px-4 py-2 bg-white shadow">
+        <img src={assets.logo} className="h-8" alt="logo" />
+        <div className="flex items-center gap-4">
+          <li className="cursor-pointer flex items-center gap-1">
+            <img src={assets.cart} className="h-4" alt="add to cart" />
+            <span className="text-sm">Cart</span>
+          </li>
+          <NavLink to="/login">
+            <button className="bg-primary p-2 rounded-lg text-white text-sm">
+              Login/Sign Up
+            </button>
+          </NavLink>
+        </div>
+      </nav>
     </>
   );
 };
