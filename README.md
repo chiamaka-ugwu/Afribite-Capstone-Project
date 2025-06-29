@@ -1,12 +1,34 @@
-# React + Vite
+# Afribite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Afribite is a modern food ordering web application built with **React** and **Vite**. It allows users to browse a menu of delicious African meals, view detailed nutritional information, and place orders. The app features authentication (email/password and Google), responsive design, and a smooth, mobile-first user experience.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View Afribite Live](https://afribite-capstone-project.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **User Authentication:** Sign up and log in with email/password or Google.
+- **Mobile-First Responsive Design:** Optimized for all devices using Tailwind CSS.
+- **Menu Browsing:** Explore a variety of meals with categories and filters.
+- **Meal Detail Modal:** Click any meal to view a beautiful modal with calories and allergy info.
+- **Allergy Warnings:** Prominent display of allergy information for each meal.
+- **Reusable Components:** Clean, modular code structure for easy maintenance.
+
+---
+
+## Tech Stack
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Firebase Auth & Firestore](https://firebase.google.com/)
+- [Formik & Yup](https://formik.org/) for forms and validation
+- [React Router](https://reactrouter.com/) for navigation
+
+---
+
+## Author
+[Chiamaka Ugwu](https://linkedin.com/in/chiamaka-ugwu) 
