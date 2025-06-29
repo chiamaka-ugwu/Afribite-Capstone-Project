@@ -15,6 +15,14 @@ import fufu from "./Fufu.jpg";
 import jollof from "./Jollof-rice.jpg";
 import moimoi from "./Moimoi.jpg";
 import wheat from "./Wheat.png";
+import google from "./google.png";
+import show from "./show.png";
+import hide from "./hide.png";
+import mail from "./mail.png";
+import lock from "./lock.png";
+import category from "./category.png";
+import personBlack from "./person.png";
+import cart from "./cart.png";
 
 
 export const assets = {
@@ -29,6 +37,14 @@ export const assets = {
   whiteSearch,
   person,
   cartCloured,
+  google,
+  show,
+  hide,
+  mail,
+  lock,
+  category,
+  personBlack,
+  cart,
 };
 
 export const Categories = [
@@ -88,4 +104,18 @@ export const meals  = [
   },
 ];
 
+export const menuDetails = [
+  {
+    id: 1,
+    image: amala,
+    title: "Amala, Ewedu and Gbegiri",
+    calories: "180 calories",
+    fat: "10.3g",
+    carb: "7g",
+    protein: "18.49g",
+    description:
+      "There are 180 calories in a plate of amala, ewedu and gbegiri.",
+    warning: "Allergy Warning: Palm oil is an ingredient.",
+  },
+];
 

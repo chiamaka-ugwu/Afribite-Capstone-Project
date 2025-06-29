@@ -1,6 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const MenuNavbar = () => {
   return (
@@ -12,15 +12,15 @@ const MenuNavbar = () => {
           </NavLink>
         </div>
         <ul className="flex items-center justify-between w-3/4">
-          <li className="flex items-center">
+          <li className="cursor-pointer flex items-center">
             <span className="text-sm">Swallow</span>
             <img src={assets.whiteArrow} alt="arrow_down" />
           </li>
-          <li className="flex items-center">
+          <li className="cursor-pointer flex items-center">
             <span className="text-sm">Rice</span>
             <img src={assets.whiteArrow} alt="arrow_down" />
           </li>
-          <li className="flex items-center">
+          <li className="cursor-pointer flex items-center">
             <span className="text-sm">Soups</span>
             <img src={assets.whiteArrow} alt="arrow_down" />
           </li>
