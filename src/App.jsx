@@ -12,7 +12,15 @@ const Home = lazy(() => import("./pages/Home"));
 function App() {
   return (
     <AuthProvider>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div
+            className="bg-modal fixed w-full h-screen top-0 z-50 flex items-center justify-center text-white"
+          >
+            Loading...
+          </div>
+        }
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
