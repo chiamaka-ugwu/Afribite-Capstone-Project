@@ -6,7 +6,6 @@ Afribite is a modern food ordering web application built with **React** and **Vi
 
 [View Afribite Live](https://afribite-capstone-project.netlify.app/)
 
----
 
 ## Features
 
@@ -17,7 +16,6 @@ Afribite is a modern food ordering web application built with **React** and **Vi
 - **Allergy Warnings:** Prominent display of allergy information for each meal.
 - **Reusable Components:** Clean, modular code structure for easy maintenance.
 
----
 
 ## Tech Stack
 
@@ -28,7 +26,6 @@ Afribite is a modern food ordering web application built with **React** and **Vi
 - [Formik & Yup](https://formik.org/) for forms and validation
 - [React Router](https://reactrouter.com/) for navigation
 
----
 
 ## Author
 [Chiamaka Ugwu](https://linkedin.com/in/chiamaka-ugwu) 
