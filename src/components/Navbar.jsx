@@ -10,10 +10,12 @@ const Navbar = () => {
       </div>
       <ul className="flex justify-between items-center w-4/5">
         <li className="text-sm">Home</li>
-        <li className="flex items-center">
-          <span className="text-sm">Menu</span>
-          <img src={assets.arrow_down} className="h-5" alt="arrow_down" />
-        </li>
+        <NavLink to="/menu">
+          <li className="flex items-center">
+            <span className="text-sm">Menu</span>
+            <img src={assets.arrow_down} className="h-5" alt="arrow_down" />
+          </li>
+        </NavLink>
         <li className="flex items-center">
           <span className="text-sm">Specials</span>
           <img src={assets.arrow_down} className="h-5" alt="arrow_down" />
