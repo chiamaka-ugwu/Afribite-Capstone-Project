@@ -1,8 +1,20 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const MenuNavbar = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  }
   return (
     <>
       {/* Desktop Navbar */}
@@ -42,6 +54,14 @@ const MenuNavbar = () => {
                 <img src={assets.cartCloured} alt="person" />
               </div>
             </div>
+            {user && (
+              <button
+                onClick={handleLogout}
+                className="bg-white text-primary px-3 py-1 rounded text-xs font-semibold"
+              >
+                Logout
+              </button>
+            )}
           </ul>
         </div>
       </nav>
@@ -51,21 +71,20 @@ const MenuNavbar = () => {
         <NavLink to="/">
           <img src={assets.menuLogo} className="h-10" alt="logo" />
         </NavLink>
-        <div className="flex items-center relative">
-          <img
-            src={assets.whiteSearch}
-            className="h-4 absolute left-4"
-            alt="arrow_down"
-          />
-          <input
-            type="text"
-            className="text-xs py-3 px-10 border rounded-l-lg w-35 bg-transparent border-white outline-primary"
-            placeholder="Search"
-          />
-          <div className="flex items-center gap-2 bg-white p-2 px-2">
-            <img src={assets.person} alt="person" />
-            <img src={assets.cartCloured} alt="person" />
+        <div className="flex items-center gap-3">
+          <img src={assets.whiteSearch} className="h-4" alt="search" />
+          <div className="flex items-center gap-2 bg-white p-2 rounded">
+            <img src={assets.person} className="h-5" alt="person" />
+            <img src={assets.cartCloured} className="h-5" alt="cart" />
           </div>
+          {user && (
+            <button
+              onClick={handleLogout}
+              className="ml-2 bg-white text-primary p-2 rounded text-xs font-semibold shadow"
+            >
+              Logout
+            </button>
+          )}
         </div>
       </nav>
     </>
